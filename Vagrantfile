@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "centos/7"
+  config.vm.box = "ubuntu/xenial64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -50,7 +50,7 @@ Vagrant.configure("2") do |config|
   # Example for VirtualBox:
   #
   # config.vm.provider "virtualbox" do |vb|
-     # Display the VirtualBox GUI when booting the machine
+  #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
@@ -64,7 +64,8 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    yum update
-    yum install vim -y
+    apt-get update
+    apt-get install -y vim
+    apt-get install -y nginx
   SHELL
 end
