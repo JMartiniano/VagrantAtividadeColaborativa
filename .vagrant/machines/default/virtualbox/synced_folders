@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/jmartiniano/Documentos/Acadêmico/Virtualizacao/VagrantAtividadeColaborativa","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
