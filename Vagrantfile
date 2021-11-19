@@ -67,5 +67,17 @@ Vagrant.configure("2") do |config|
     apt-get update
     apt-get install -y vim
     apt-get install -y nginx
+    apt-get install -y mysql-server
+    apt-get install -y php7.2-cli php7.2-fpm php7.2-mysql php7.2-json php7.2-opcache php7.2-mbstring php7.2-xml php7.2-gd php7.2-curl
+    mkdir -p /var/www/html/sample.com
+    cd /tmp
+    wget https://wordpress.org/latest.tar.gz
+    tar xf latest.tar.gz
+    mv /tmp/wordpress/* /var/www/html/sample.com/
+    chown -R www-data: /var/www/html/sample.com
+    ln -s /etc/nginx/sites-available/sample.com /etc/nginx/sites-enabled/
+    nginx -t
+    systemctl restart nginx
+
   SHELL
 end
